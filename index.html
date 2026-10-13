@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+        // Suppress and handle solveSimpleChallenge ReferenceError from browser extensions/CAPTCHA
+        var solveSimpleChallenge = window.solveSimpleChallenge || function () { };
+        window.addEventListener('error', function (e) {
+            if (e.message && e.message.includes('solveSimpleChallenge')) {
+                e.preventDefault();
+                return true;
+            }
+        });
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bien Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts for clean typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        (function () {
+            const savedTheme = localStorage.getItem('portfolio-theme') ||
+                (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        })();
+    </script>
+</head>
+
+<body>
+
+    <!-- Header & Navigation -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="#" class="logo">My Portfolio<span class="logo-dot">.</span></a>
+            <div class="nav-right">
+                <nav class="nav-links">
+                    <a href="#about">About</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#experience">Experience</a>
+                    <a href="#contact" class="btn-nav">Contact</a>
+                </nav>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <div class="hero-badges">
+                    <span class="badge">BSIT Student & Developer</span>
+                    <span class="status-badge"><span class="status-dot"></span> Available for Internship</span>
+                </div>
+                <h1 class="hero-name">Mark Bien S. Arcillas</h1>
+                <p class="hero-tagline">Building functional, user-friendly digital solutions.</p>
+                <p class="hero-bio">Fourth-year Bachelor of Science in Information Technology student at St. Louise de
+                    Marillac College of Bogo, focusing on modern web development, software solutions, and system
+                    analysis.</p>
+                <div class="hero-actions">
+                    <a href="#projects" class="btn btn-primary">View Projects</a>
+                    <a href="#contact" class="btn btn-outline">Get in Touch</a>
+                </div>
+            </div>
+            <div class="hero-image-wrapper">
+                <div class="profile-card">
+                    <div class="profile-img-container">
+                        <img src="grad.jpg" alt="Mark Bien S. Arcillas" class="profile-img">
+                    </div>
+                    <div class="profile-floating-tag">
+                        <span class="tag-icon">🎓</span>
+                        <div class="tag-text">
+                            <strong>BSIT</strong>
+                            <small>SLMCB</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>I am <strong>Mark Bien S. Arcillas</strong>, a fourth-year <strong>Bachelor of Science in
+                            Information Technology (BSIT)</strong> student at St. Louise de Marillac College of Bogo,
+                        with a strong interest in web development, software development, and information systems.</p>
+                    <p>I have foundational knowledge of HTML, CSS, PHP, MySQL, Laravel, Node.js, React.js, and computer
+                        networking. Through academic projects and hands-on practice, I continue to develop my skills in
+                        building functional, user-friendly, and responsive websites.</p>
+                    <p>I am a motivated and detail-oriented individual who enjoys solving problems, learning new
+                        technologies, and creating practical digital solutions. My goal is to grow as a web developer
+                        and contribute to meaningful projects while continuously improving my technical skills.</p>
+                </div>
+                <div class="about-card">
+                    <h3>Education</h3>
+                    <div class="edu-item">
+                        <span class="edu-year">2023 — Present (Expected 2027)</span>
+                        <h4>Bachelor of Science in Information Technology (BSIT)</h4>
+                        <p>St. Louise de Marillac College of Bogo</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Skills Section -->
+    <section id="skills" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Frontend Development</h3>
+                    <ul>
+                        <li>HTML5 & CSS3</li>
+                        <li>React.js</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Backend & Databases</h3>
+                    <ul>
+                        <li>PHP & Laravel</li>
+                        <li>Node.js</li>
+                        <li>MySQL & Database Design</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Systems & Networking</h3>
+                    <ul>
+                        <li>System Analysis & Design</li>
+                        <li>Computer Networking</li>
+                        <li>Version Control & Tools</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Student Information System</h3>
+                        <span class="project-tag">Information System</span>
+                    </div>
+                    <p>A comprehensive system designed to manage student records, profile data, and academic tracking
+                        efficiently with a structured database backend.</p>
+                    <div class="tech-stack">
+                        <span>PHP</span>
+                        <span>MySQL</span>
+                        <span>HTML/CSS</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>St. Louise Research Portal</h3>
+                        <span class="project-tag"></span>
+                    </div>
+                    <p>A specialized academic repository portal built to streamline research archiving, document
+                        indexing, and user access management for students and faculty.</p>
+                    <div class="tech-stack">
+                        <span>Laravel</span>
+                        <span>PHP</span>
+                        <span>MySQL</span>
+                        <span>Bootstrap</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience & Background Section -->
+    <section id="experience" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Experience & Certifications</h2>
+            <div class="exp-grid">
+                <div class="exp-item">
+                    <span class="exp-year">Academic Projects</span>
+                    <h3>Practical IT System Development</h3>
+                    <p>Designed, developed, and deployed full-stack web applications as part of advanced IT coursework,
+                        handling everything from database schema design to frontend UI implementation.</p>
+                </div>
+                <div class="exp-item">
+                    <span class="exp-year">Credentials</span>
+                    <h3>TESDA Micro-Credentials</h3>
+                    <p>Completed specialized technical training and certifications focusing on information technology
+                        fundamentals and practical digital competencies.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container contact-container">
+            <h2 class="section-title">Let's Connect</h2>
+            <p class="contact-sub">I am actively looking for IT internships and entry-level developer opportunities.
+                Feel free to reach out through any of the platforms below.</p>
+            <div class="contact-links">
+                <a href="https://github.com/markbienarcillas4-max" target="_blank" rel="noopener noreferrer"
+                    class="contact-btn">GitHub</a>
+                <a href="https://www.linkedin.com/in/mark-bien-arcillas-623449442" target="_blank"
+                    rel="noopener noreferrer" class="contact-btn">LinkedIn</a>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=markbienarcillas4@gmail.com" target="_blank"
+                    rel="noopener noreferrer" class="contact-btn">Email</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Theme Switcher Script -->
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+
+        function updateThemeUI(theme) {
+            const isDark = theme === 'dark';
+            themeToggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+            themeToggle.setAttribute('title', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+        }
+
+        const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+        updateThemeUI(currentTheme);
+
+        themeToggle.addEventListener('click', () => {
+            const current = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+            const next = current === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', next);
+            localStorage.setItem('portfolio-theme', next);
+            updateThemeUI(next);
+        });
+    </script>
+</body>
+
+</html>
